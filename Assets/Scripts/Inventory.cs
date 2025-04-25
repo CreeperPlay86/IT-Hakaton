@@ -46,9 +46,8 @@ public class Inventory : MonoBehaviour
 
     void PickupItem()
     {
-        Ray ray = cam.ScreenPointToRay(new Vector2(Screen.width / 2, Screen.height / 2));
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, range))
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, range))
         {
             if (hit.collider.GetComponent<Item>())
             {
@@ -130,9 +129,8 @@ public class Inventory : MonoBehaviour
 
     void InterctWithNPC()
     {
-        Ray ray = cam.ScreenPointToRay(new Vector2(Screen.width / 2, Screen.height / 2));
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, range))
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, range))
         {
             if (hit.collider.GetComponent<NPC>())
             {
