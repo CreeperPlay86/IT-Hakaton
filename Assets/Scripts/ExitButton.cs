@@ -11,6 +11,11 @@ public class ExitButton : MonoBehaviour
         {
             Restart();
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Exit();
+        }
 }
 
     public void Exit()
