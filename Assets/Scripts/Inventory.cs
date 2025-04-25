@@ -61,7 +61,9 @@ public class Inventory : MonoBehaviour
                         if (items[i].id == 0)
                         {
                             items[i] = hit.collider.gameObject.GetComponent<Item>();
+                            print(items[i].name);
                             DisplayItems();
+                            
                             Destroy(hit.collider.gameObject);
                             break;
                         }
@@ -78,7 +80,7 @@ public class Inventory : MonoBehaviour
         for (int i = 0; i < items.Count; i++)
         {
             Transform cell = cellContainer.transform.GetChild(i).transform;
-
+            
             if (items[i].id != 0 && cell.transform.GetChild(0).name == "Icon_000" ||
                 cell.transform.GetChild(0).name == "Icon_000(Clone)")
             {
